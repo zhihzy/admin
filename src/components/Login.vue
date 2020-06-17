@@ -27,8 +27,8 @@ export default {
   data() {
     return {
       form: {
-        userName: "admin",
-        password: "123456"
+        userName: "",
+        password: ""
       },
       // 验证信息
       rules: {
