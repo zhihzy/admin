@@ -7,6 +7,10 @@ import axios from 'axios'
 import './plugins/element.js'
 
 axios.defaults.baseURL='http://127.0.0.1:7001/admin/v1/'
+axios.interceptors.request.use(config=>{
+  config.headers.Authorizeation=sessionStorage.getItem('openId')
+  return config
+})
 Vue.prototype.$http=axios
 Vue.config.productionTip = false
 
