@@ -57,15 +57,15 @@ export default {
         {
           id: "01",
           authName: "用户管理",
-          children: [{ id: "1", authName: "用户列表", path: "user" }]
+          children: [{ id: "1", authName: "用户列表", path: "user" }],
         },
         {
           id: "02",
           authName: "权限管理",
           children: [
-            { id: "1", authName: "角色列表" },
-            { id: "2", authName: "权限列表" }
-          ]
+            { id: "1", authName: "角色列表", path: "roles" },
+            { id: "2", authName: "权限列表", path: "rights" },
+          ],
         },
         {
           id: "03",
@@ -73,27 +73,27 @@ export default {
           children: [
             { id: "1", authName: "商品列表" },
             { id: "2", authName: "分类参数" },
-            { id: "3", authName: "商品分类" }
-          ]
+            { id: "3", authName: "商品分类" },
+          ],
         },
         {
           id: "04",
           authName: "订单管理",
-          children: [{ id: "1", authName: "订单列表" }]
+          children: [{ id: "1", authName: "订单列表" }],
         },
         {
           id: "05",
           authName: "数据统计",
-          children: []
-        }
+          children: [],
+        },
       ],
       icons: {
         "01": "el-icon-user-solid",
         "02": "el-icon-s-management",
         "03": "el-icon-s-goods",
         "04": "el-icon-s-order",
-        "05": "el-icon-s-data"
-      }
+        "05": "el-icon-s-data",
+      },
     };
   },
   created() {
@@ -106,14 +106,14 @@ export default {
     },
     saveNavState(activePath) {
       sessionStorage.setItem("activePath", activePath);
-      this.activePath=activePath
-    }
+      this.activePath = activePath;
+    },
   },
   computed: {
     icon() {
       return this.isCollapse ? "el-icon-s-unfold" : "el-icon-s-fold";
-    }
-  }
+    },
+  },
 };
 </script>
 
